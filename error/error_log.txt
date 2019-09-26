@@ -1,0 +1,10 @@
+[Thu Sep 26 01:19:06.234525 2019] [mpm_prefork:notice] [pid 3074] AH00170: caught SIGWINCH, shutting down gracefully
+[Thu Sep 26 01:27:11.846482 2019] [suexec:notice] [pid 3052] AH01232: suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Thu Sep 26 01:27:11.876725 2019] [lbmethod_heartbeat:notice] [pid 3052] AH02282: No slotmem from mod_heartmonitor
+[Thu Sep 26 01:27:11.876774 2019] [http2:warn] [pid 3052] AH10034: The mpm module (prefork.c) is not supported by mod_http2. The mpm determines how things are processed in your server. HTTP/2 has more demands in this regard and the currently selected mpm will just not do. This is an advisory warning. Your server will continue to work, but the HTTP/2 protocol will be inactive.
+[Thu Sep 26 01:27:11.876780 2019] [http2:warn] [pid 3052] AH02951: mod_ssl does not seem to be enabled
+[Thu Sep 26 01:27:11.881906 2019] [mpm_prefork:notice] [pid 3052] AH00163: Apache/2.4.39 () configured -- resuming normal operations
+[Thu Sep 26 01:27:11.881929 2019] [core:notice] [pid 3052] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+[Thu Sep 26 01:31:26.314588 2019] [cgi:error] [pid 3088] [client 70.171.200.196:49946] AH02811: script not found or unable to stat: /var/www/cgi-bin/test, referer: http://labpage.com/form.html
+[Thu Sep 26 04:03:55.653562 2019] [cgi:error] [pid 3086] [client 70.171.200.196:50594] AH01215: (8)Exec format error: exec of '/var/www/cgi-bin/nop' failed: /var/www/cgi-bin/nop
+[Thu Sep 26 04:03:55.653885 2019] [cgi:error] [pid 3086] [client 70.171.200.196:50594] End of script output before headers: nop

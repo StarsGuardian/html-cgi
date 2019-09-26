@@ -1,38 +1,35 @@
 #!/usr/bin/python3
 
-import cgi
+import cgi,cgitb
 
-print("Content-Type: text/html\r\n\r\n")
+cgitb.enable()
 
-print ("<html>")
-print ("<head><title>Basic CGI</title></head>")
-print ("<body><center>")
-print ("<h1>Basic CGI</h1>")
+print("Content-Type: text/html")
+print("Status: 200 OK")
+print()
 
 form = cgi.FieldStorage()
-if form.getvalue("input"):
-    num = form.getvalue("input")
-    print ('<h1 id="printout">'+num+'</h1><br />')
 
-print ('''<script>
-    function buttonClick(){
-        var str = document.getElementById("printout").innerHTML
-        num = parseInt(str,10) + 1
-        str = num
-    }
-    function refreshPage(){
-        window.location.reload();
-    } 
-    </script>''')
+if "cur" in form:
+    cur = int(form["cur"].value)
+else: 
+    cur = 50;
 
-print ('<form method ="post" action = "basicCGI">')
-print ("Enter a number: ")
-print ('<input type="number" name="input" id ="input"></input>')
-print ('<input type="submit"></input><br>')
-print ("<br>")
-print ('<button type="button" onclick="buttonClick()" >counter + 1</button>')
-print ('<button type="button" onclick="refreshPage()">counter - 1</button>')
+print("""
+<html>
+<head>
+<title>Basic CGI</title>
+</head>
+<body>
 
-print ("</form>")
-print ("</center></body>")
-print ("</html>")
+<center>
+<h1>Basic CGI</h1>
+<p><h2>Counter: {}<h2>
+<a href="basicCGI?cur={}">Go up</a>
+<br>
+<a href="basicCGI?cur={}">Go down</a>
+</center>
+
+</body>
+</html>        
+""".format(cur,cur+1,cur-1))

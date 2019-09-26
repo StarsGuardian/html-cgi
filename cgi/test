@@ -1,0 +1,19 @@
+#!/usr/bin/python3
+
+import cgi 
+
+form = cgi.FieldStorage() 
+
+first_name = form.getvalue('firstname')
+last_name  = form.getvalue('lastname')
+hidden_value = form.getvalue('hidden')
+
+print ("Content-type:text/html\r\n\r\n")
+print ("<html>")
+print ("<head>")
+print ("<title>Form Result</title>")
+print ("</head>")
+print ("<body>")
+print ("<center><h2>Hello %s %s, how are you?</h2></center>" % (first_name, last_name))
+print ("</body>")
+print ("</html>")

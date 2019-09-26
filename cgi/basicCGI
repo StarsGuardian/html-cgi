@@ -1,0 +1,37 @@
+#!/usr/bin/python3
+
+import cgi
+
+print("Content-Type: text/html\r\n\r\n")
+
+print ("<html>")
+print ("<head><title>Basic CGI</title></head>")
+print ("<body><center>")
+print ("<h1>Basic CGI</h1>")
+
+form = cgi.FieldStorage()
+if form.getvalue("input"):
+    num = form.getvalue("input")
+    print ('<h1 id="printout">'+num+'</h1><br />')
+
+print ('''<script>
+    function buttonClick(){
+        document.getElementById("printout").innerHTML += Number(1)
+    
+    }
+    function refreshPage(){
+        window.location.reload();
+    } 
+    </script>''')
+
+print ('<form method ="post" action = "basicCGI">')
+print ("Enter a number: ")
+print ('<input type="number" name="input" id ="input"></input>')
+print ('<input type="submit"></input><br>')
+print ("<br>")
+print ('<button type="submit" onclick="buttonClick()" >counter + 1</button>')
+print ('<button type="button" onclick="refreshPage()">counter - 1</button>')
+
+print ("</form>")
+print ("</center></body>")
+print ("</html>")

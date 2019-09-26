@@ -6,23 +6,36 @@ form = cgi.FieldStorage()
 
 first_name = form.getvalue('firstname')
 last_name  = form.getvalue('lastname')
+mood1 = form.getvalue("mood1")
+mood2 = form.getvalue("mood2")
 hidden_value = form.getvalue('hidden')
 
-print ("Content-type:text/html\r\n\r\n")
+
+print ("Content-type:text/html")
+print ("Status: 200 OK")
+print ()
 print ("<html>")
 print ("<head>")
 print ("<title>Form Result</title>")
 print ("</head>")
 print ("<body>")
-print ("<center><h2>Hello %s %s, how are you?</h2></center>" % (first_name, last_name))
+
+if mood1:
+    print ("<center><h2>Hello %s %s. Oh yes! You are happy!</h2></center>" % (first_name, last_name))
+if mood2:
+    print ("<center><h2>Hello %s %s. Oh no, why are you sad?</h2></center>" % (first_name, last_name))
+
 print ('''<center>
 <form action="/cgi-bin/form" method="post">
   First name:<br>
   <input type="text" name="firstname" value="foo"><br>
   Last name:<br>
   <input type="text" name="lastname" value="bar"><br>
+  <input type="hidden" name="hidden"  value="2019"><br>
+  <input type="checkbox" name="mood1" Checked> I am happy :)
+  <input type="checkbox" name="mood2"> I am sad :(
+  <br><br>
   <input type="submit" value="Submit"><br>
-  <input type="hidden" name="hidden"  value="123"><br>
 </form>
 </center>''')
 print ("</body>")

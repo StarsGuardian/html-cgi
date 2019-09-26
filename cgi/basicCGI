@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 
-import cgi,cgitb
-
-cgitb.enable()
+import cgi
 
 print("Content-Type: text/html")
 print("Status: 200 OK")
@@ -13,7 +11,7 @@ form = cgi.FieldStorage()
 if "cur" in form:
     cur = int(form["cur"].value)
 else: 
-    cur = 50;
+    cur = 0;
 
 print("""
 <html>

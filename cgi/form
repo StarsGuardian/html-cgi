@@ -15,5 +15,15 @@ print ("<title>Form Result</title>")
 print ("</head>")
 print ("<body>")
 print ("<center><h2>Hello %s %s, how are you?</h2></center>" % (first_name, last_name))
+print ('''<center>
+<form action="/cgi-bin/form" method="post">
+  First name:<br>
+  <input type="text" name="firstname" value="foo"><br>
+  Last name:<br>
+  <input type="text" name="lastname" value="bar"><br>
+  <input type="submit" value="Submit"><br>
+  <input type="hidden" name="hidden"  value="123"><br>
+</form>
+</center>''')
 print ("</body>")
 print ("</html>")

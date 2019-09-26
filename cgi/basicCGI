@@ -16,8 +16,9 @@ if form.getvalue("input"):
 
 print ('''<script>
     function buttonClick(){
-        document.getElementById("printout").innerHTML += Number(1)
-    
+        var str = document.getElementById("printout").innerHTML
+        num = parseInt(str,10) + 1
+        str = num
     }
     function refreshPage(){
         window.location.reload();
@@ -29,7 +30,7 @@ print ("Enter a number: ")
 print ('<input type="number" name="input" id ="input"></input>')
 print ('<input type="submit"></input><br>')
 print ("<br>")
-print ('<button type="submit" onclick="buttonClick()" >counter + 1</button>')
+print ('<button type="button" onclick="buttonClick()" >counter + 1</button>')
 print ('<button type="button" onclick="refreshPage()">counter - 1</button>')
 
 print ("</form>")

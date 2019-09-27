@@ -1,1 +1,2 @@
-You read me.
+Main page: ec2-3-87-218-168.compute-1.amazonaws.com
+Basic CGI page: ec2-3-87-218-168.compute-1.amazonaws.com/cgi-bin/basic_CGI

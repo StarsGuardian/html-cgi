@@ -1,0 +1,52 @@
+#! /usr/bin/python3
+  
+import cgi, cgitb
+
+cgitb.enable()
+
+print ("Content-Type: text/html")
+print ("Status: 200 OK")
+print ()
+
+form = cgi.FieldStorage()
+
+if "firstname" in form and "lastname" in form:
+    firstname = str(form["firstname"].value)
+    lastname = str(form["lastname"].value)
+else:
+    firstname = "Firstname"
+    lastname = "Lastname"
+if "Human" in form:
+    human = "Applied"
+else:
+    human = "Not apply"
+if "Unhuman" in form:
+    unhuman = "Applied"
+else:
+    unhuman = "Not apply"
+if "Unknown" in form:
+    unknown = "Applied"
+else:
+    unknown = "Not apply"
+
+print ("<html>")
+print ("<head><tile><center><h1>TEST PAGE</h1></center></title></head>")
+print ("<body>")
+print ("<center>")
+print ("<br>")
+print ("<h2>Information generated: %s %s</h2><br>" % (firstname, lastname))
+print ("<h2>Species: Human --  %s</h2><br>" % (human))
+print ("  <h2>Unhuman --  %s</h2><br>" % (unhuman))
+print ("  <h2>Unknown --  %s</h2><br>" % (unknown))
+print ('''<form action = '/cgi-bin/test' method = 'get'>
+        First name: <input type = 'text' name = 'firstname' value = firstname><br>
+        Last name: <input type = 'text' name = 'lastname' value = lastname><br>
+        <input type = 'radio' name = 'Human' value = Human>Human<br>
+        <input type = 'radio' name = 'Unhuman' value = Unhuman>Not Human<br>
+        <input type = 'radio' name = 'Unknown' value = Unknown>Unknown<br>
+        <input type = 'hidden' name = 'hidden' value = 'Unleashed'><br>
+        <input type = 'submit' value = 'Submit'><br>
+        </form>''')
+print ("</center>")
+print ("</body>")
+print ("</html>")

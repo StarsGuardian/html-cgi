@@ -1,0 +1,41 @@
+#! /usr/bin/python3
+  
+# Import modules for CGI handling
+import cgi, cgitb
+import datetime
+cgitb.enable()
+print ("Content-type:text/html")
+print ("Status: 200 OK")
+print ()
+
+#Create instance of FieldStorage
+form = cgi.FieldStorage()
+
+#Get data from fields
+if "Counter" in form:
+    Counter =  int(form["Counter"].value)
+else:
+    Counter = 0
+time = datetime.datetime.now()
+current_time = time.strftime("%Y-%m-%d %H:%M:%S")
+print ("<html>")
+print ("<head>")
+print ("<title>CGI Program</title>")
+print ("</head>")
+print ("<body>")
+print ("<center>")
+print ("<br>")
+print ("<h1>Hello! %s %s</h1>" % ("Ian,", " Chaoneng"))
+print ("<h1>Counter:{}</h1>".format(Counter))
+print ("<h2>天王盖地虎</h2>")
+print ("<h2>宝塔镇河妖</h2>")
+print ("<h3>")
+print (current_time)
+print ("</h3>")
+print ("<a href = 'basic_CGI?Counter={}'> Up </a>".format(Counter + 1))
+print ("<br>")
+print ("<a href = 'basic_CGI?Counter={}'> Down </a>".format(Counter - 1))
+print ("</center>")
+print ("</body>")
+print ("</html>")
+

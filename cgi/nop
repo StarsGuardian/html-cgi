@@ -1,0 +1,14 @@
+#! /usr/bin/python3
+  
+print("Content-Type: text/html\r\n\r\n")
+print("Status: 200 OK")
+
+print("<html>")
+print("<head>")
+print("<title>First CGI Script</title>")
+print("</head>")
+print("<body>")
+print("<center><h1>First CGI Script</h1><center>")
+print("</body>")
+print("</html>")
+

@@ -1,0 +1,10 @@
+[Thu Sep 26 22:18:40.840141 2019] [cgi:error] [pid 3081] [client 150.135.165.1:45633] AH01215:   File "/var/www/cgi-bin/test", line 35: /var/www/cgi-bin/test, referer: http://ec2-3-87-218-168.compute-1.amazonaws.com/
+[Thu Sep 26 22:18:40.840200 2019] [cgi:error] [pid 3081] [client 150.135.165.1:45633] AH01215:     print ("<h2>Species: %s, %s, %s</h2>: /var/www/cgi-bin/test, referer: http://ec2-3-87-218-168.compute-1.amazonaws.com/
+[Thu Sep 26 22:18:40.840239 2019] [cgi:error] [pid 3081] [client 150.135.165.1:45633] AH01215:                                        ^: /var/www/cgi-bin/test, referer: http://ec2-3-87-218-168.compute-1.amazonaws.com/
+[Thu Sep 26 22:18:40.840297 2019] [cgi:error] [pid 3081] [client 150.135.165.1:45633] AH01215: SyntaxError: EOL while scanning string literal: /var/www/cgi-bin/test, referer: http://ec2-3-87-218-168.compute-1.amazonaws.com/
+[Thu Sep 26 22:18:40.842043 2019] [cgi:error] [pid 3081] [client 150.135.165.1:45633] End of script output before headers: test, referer: http://ec2-3-87-218-168.compute-1.amazonaws.com/
+[Thu Sep 26 22:18:51.444701 2019] [cgi:error] [pid 3480] [client 150.135.165.36:32214] AH01215:   File "/var/www/cgi-bin/test", line 35: /var/www/cgi-bin/test, referer: http://ec2-3-87-218-168.compute-1.amazonaws.com/
+[Thu Sep 26 22:18:51.444767 2019] [cgi:error] [pid 3480] [client 150.135.165.36:32214] AH01215:     print ("<h2>Species: %s, %s, %s</h2>: /var/www/cgi-bin/test, referer: http://ec2-3-87-218-168.compute-1.amazonaws.com/
+[Thu Sep 26 22:18:51.444800 2019] [cgi:error] [pid 3480] [client 150.135.165.36:32214] AH01215:                                        ^: /var/www/cgi-bin/test, referer: http://ec2-3-87-218-168.compute-1.amazonaws.com/
+[Thu Sep 26 22:18:51.444837 2019] [cgi:error] [pid 3480] [client 150.135.165.36:32214] AH01215: SyntaxError: EOL while scanning string literal: /var/www/cgi-bin/test, referer: http://ec2-3-87-218-168.compute-1.amazonaws.com/
+[Thu Sep 26 22:18:51.446565 2019] [cgi:error] [pid 3480] [client 150.135.165.36:32214] End of script output before headers: test, referer: http://ec2-3-87-218-168.compute-1.amazonaws.com/ 

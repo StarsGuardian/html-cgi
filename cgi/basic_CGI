@@ -4,9 +4,14 @@
 import cgi, cgitb
 import datetime
 cgitb.enable()
+
 print ("Content-type:text/html")
 print ("Status: 200 OK")
 print ()
+
+file = open("records.txt", "r")
+filelines = file.readline()
+number = int(filelines.strip("\n"))
 
 #Create instance of FieldStorage
 form = cgi.FieldStorage()
@@ -35,6 +40,18 @@ print ("</h3>")
 print ("<a href = 'basic_CGI?Counter={}'> Up </a>".format(Counter + 1))
 print ("<br>")
 print ("<a href = 'basic_CGI?Counter={}'> Down </a>".format(Counter - 1))
+print ("<br>")
+number += 1
+file.write(str(number) + "\n")
+file.write("This page has been reloaded " + str(number).format(number) + " times")
+file.close()
+file = open("records.txt", "r")
+fileline = file.readlines()
+i = 0
+for line in fileline:
+    if i == 1:
+        print(line)
+    i += 1
 print ("</center>")
 print ("</body>")
 print ("</html>")
